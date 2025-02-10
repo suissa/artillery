@@ -10,7 +10,8 @@
     "lint": "turbo run lint  --continue",
     "lint-fix": "turbo run lint-fix  --continue",
     "format": "npx prettier -w ./packages/**/*.{js,ts,json}",
-    "prepare": "npx simple-git-hooks"
+    "prepare": "npx simple-git-hooks",
+    "preinstall": "node preinstall.js"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
