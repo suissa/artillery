@@ -1,0 +1,31 @@
+{
+  "entities": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": "UserId",
+        "name": "string",
+        "email": "string"
+      }
+    },
+    "Product": {
+      "type": "object",
+      "properties": {
+        "id": "ProductId",
+        "name": "string",
+        "price": "number"
+      }
+    }
+  },
+  "behaviors": {
+    "User Adds Product to Cart and Completes Purchase": {
+      "steps": [
+        { "type": "Given", "description": "A user exists in the system", "action": "api_request", "method": "post", "url": "http://localhost:3000/users", "payload": { "id": "u1", "name": "John Doe", "email": "john@example.com" }, "expectedStatus": 201 },
+        { "type": "Given", "description": "A product exists in the system", "action": "api_request", "method": "post", "url": "http://localhost:3000/products", "payload": { "id": "p1", "name": "Tactical Gear", "price": 100 }, "expectedStatus": 201 },
+        { "type": "When", "description": "The user adds the product to the cart", "action": "api_request", "method": "post", "url": "http://localhost:3000/carts", "payload": { "id": "c1", "userId": "u1", "items": [{ "productId": "p1", "quantity": 1 }] }, "expectedStatus": 201 },
+        { "type": "Then", "description": "The user places an order", "action": "api_request", "method": "post", "url": "http://localhost:3000/orders", "payload": { "id": "o1", "userId": "u1", "items": [{ "productId": "p1", "quantity": 1 }], "total": 100, "status": "PENDING" }, "expectedStatus": 201 },
+        { "type": "And", "description": "The user completes the payment", "action": "api_request", "method": "post", "url": "http://localhost:3000/payments", "payload": { "id": "pay1", "orderId": "o1", "amount": 100, "status": "SUCCESS" }, "expectedStatus": 201 }
+      ]
+    }
+  }
+}

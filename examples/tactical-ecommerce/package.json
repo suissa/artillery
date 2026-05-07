@@ -1,0 +1,23 @@
+{
+  "name": "tactical-ecommerce",
+  "version": "1.0.0",
+  "description": "Tactical Artillery E-commerce Example",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "fastify": "^4.26.2",
+    "tactical-artillery": "file:../../packages/tactical-artillery"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.8.2",
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0",
+    "vitest": "^4.1.5"
+  }
+}

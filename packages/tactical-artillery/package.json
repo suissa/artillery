@@ -1,0 +1,24 @@
+{
+  "name": "tactical-artillery",
+  "version": "1.0.0",
+  "description": "DSL behavior to generate and run Vitest, Cucumber, and Playwright tests",
+  "main": "dist/index.js",
+  "bin": {
+    "tactical-artillery": "bin/run.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Test pass\""
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.1",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
