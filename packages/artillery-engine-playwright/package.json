@@ -23,7 +23,7 @@
     "@playwright/browser-chromium": "1.49.1",
     "@playwright/test": "1.49.1",
     "debug": "^4.3.2",
-    "playwright": "1.49.1"
+    "playwright": "1.55.1"
   },
   "devDependencies": {
     "tap": "^19.0.2",
